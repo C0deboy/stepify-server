@@ -24,4 +24,5 @@ public class Goal {
   private List<Level> levels;
   private Checklist checklist;
   private DailyHabit dailyHabit;
+  private boolean achieved;
 }
