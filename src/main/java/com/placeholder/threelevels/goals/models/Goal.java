@@ -20,6 +20,7 @@ import java.util.List;
 public class Goal {
   @Id
   private String id;
+  private String owner;
   private String name;
   private List<Level> levels;
   private Checklist checklist;

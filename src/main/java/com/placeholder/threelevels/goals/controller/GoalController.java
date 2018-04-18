@@ -4,7 +4,6 @@ import com.placeholder.threelevels.goals.models.Goal;
 import com.placeholder.threelevels.goals.repository.GoalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,10 +12,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 public class GoalController {
   private GoalRepository goalRepository;
 
@@ -26,8 +25,8 @@ public class GoalController {
   }
 
   @GetMapping("/goals")
-  public List<Goal> getAllGoals() {
-    return goalRepository.findAll();
+  public List<Goal> getAllGoals(Principal principal) {
+    return goalRepository.findByOwner(principal.getName());
   }
 
   @PostMapping("/goals")

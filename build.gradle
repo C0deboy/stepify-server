@@ -18,6 +18,7 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.placeholder'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
@@ -31,4 +32,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+    //For Java 9
+    compile('javax.xml.bind:jaxb-api:2.3.0')
+    compile('com.sun.xml.bind:jaxb-core:2.3.0')
+    compile('com.sun.xml.bind:jaxb-impl:2.3.0')
+    compile('javax.activation:activation:1.1.1')
 }
