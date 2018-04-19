@@ -16,34 +16,34 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @EnableAuthorizationServer
 public class Oauth2AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
-  public static final String ROOT = "$2a$10$I7XYxOlGDH.7SF.w4Sf7.OPFthK9iJYGOpi3gcN8oMkKBLUiH0bBu";
+    public static final String ROOT = "$2a$10$I7XYxOlGDH.7SF.w4Sf7.OPFthK9iJYGOpi3gcN8oMkKBLUiH0bBu";
 
-  @Autowired
-  private AuthenticationManager authenticationManager;
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
-  @Override
-  public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
-    oauthServer.tokenKeyAccess("permitAll()")
-        .checkTokenAccess("isAuthenticated()");
-  }
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+        oauthServer.tokenKeyAccess("permitAll()")
+            .checkTokenAccess("isAuthenticated()");
+    }
 
-  @Override
-  public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-    clients.inMemory()
-        .withClient("root").secret(ROOT)
-        .authorizedGrantTypes("password", "authorization_code", "refresh_token")
-        .accessTokenValiditySeconds(3600)
-        .refreshTokenValiditySeconds(28 * 24 * 3600)
-        .scopes("read", "write");
-  }
+    @Override
+    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+        clients.inMemory()
+            .withClient("root").secret(ROOT)
+            .authorizedGrantTypes("password", "authorization_code", "refresh_token")
+            .accessTokenValiditySeconds(3600)
+            .refreshTokenValiditySeconds(28 * 24 * 3600)
+            .scopes("read", "write");
+    }
 
-  @Override
-  public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-    endpoints.tokenStore(tokenStore()).authenticationManager(authenticationManager);
-  }
+    @Override
+    public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+        endpoints.tokenStore(tokenStore()).authenticationManager(authenticationManager);
+    }
 
-  @Bean
-  public TokenStore tokenStore() {
-    return new InMemoryTokenStore();
-  }
+    @Bean
+    public TokenStore tokenStore() {
+        return new InMemoryTokenStore();
+    }
 }

@@ -1,10 +1,6 @@
 package com.placeholder.threelevels.goals.models;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
@@ -12,6 +8,6 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public class ListItem {
-  private String value;
-  private boolean checked;
+    private String value;
+    private boolean checked;
 }

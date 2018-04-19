@@ -1,10 +1,6 @@
 package com.placeholder.threelevels.goals.models;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Date;
 
@@ -15,10 +11,10 @@ import java.util.Date;
 @EqualsAndHashCode
 public class DailyHabit {
 
-  private Date from;
-  private Date to;
-  private int everyNDays;
-  private int[] dailyChecklist;
-  private int[] specificDays;
+    private Date from;
+    private Date to;
+    private int everyNDays;
+    private int[] dailyChecklist;
+    private int[] specificDays;
 
 }

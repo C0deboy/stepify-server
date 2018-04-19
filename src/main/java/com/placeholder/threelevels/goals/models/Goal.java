@@ -1,10 +1,7 @@
 package com.placeholder.threelevels.goals.models;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,12 +15,12 @@ import java.util.List;
 
 @Document(collection = "goals")
 public class Goal {
-  @Id
-  private String id;
-  private String owner;
-  private String name;
-  private List<Level> levels;
-  private Checklist checklist;
-  private DailyHabit dailyHabit;
-  private boolean achieved;
+    @Id
+    private String id;
+    private ObjectId owner;
+    private String name;
+    private List<Level> levels;
+    private Checklist checklist;
+    private DailyHabit dailyHabit;
+    private boolean achieved;
 }

@@ -1,10 +1,6 @@
 package com.placeholder.threelevels.goals.models;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
@@ -12,8 +8,8 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public class Level {
-  private int level;
-  private String name;
-  private String reward;
-  private boolean achieved;
+    private int level;
+    private String name;
+    private String reward;
+    private boolean achieved;
 }
