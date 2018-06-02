@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -27,7 +28,7 @@ public class GoalController {
     }
 
     @PostMapping("/goals")
-    public Goal addGoal(Authentication authentication, @RequestBody Goal goal) {
+    public Goal addGoal(Authentication authentication, @Valid @RequestBody Goal goal) {
         CustomUser customUser = (CustomUser) authentication.getPrincipal();
         goal.setOwner(new ObjectId(customUser.getId()));
 
@@ -35,7 +36,7 @@ public class GoalController {
     }
 
     @PutMapping("/goals")
-    public Goal updateGoal(@RequestBody Goal goal) {
+    public Goal updateGoal(@Valid @RequestBody Goal goal) {
         return goalRepository.save(goal);
     }
 
