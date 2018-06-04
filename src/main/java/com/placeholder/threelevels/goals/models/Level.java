@@ -17,10 +17,10 @@ public class Level {
     private int level;
     @Size.List({
         @Size(min = 3, message = "{Level.name.min}"),
-        @Size(max = 50, message = "{Level.name.max}")
+        @Size(max = 80, message = "{Level.name.max}")
     })
     private String name;
-    @Size(max = 50, message = "{Level.reward.max}")
+    @Size(max = 80, message = "{Level.reward.max}")
     private String reward;
     @NotNull(message = "{Level.corrupted}")
     private boolean achieved;
