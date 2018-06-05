@@ -3,6 +3,7 @@ package com.placeholder.threelevels.goals.models;
 import lombok.*;
 import org.bson.types.ObjectId;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -35,4 +36,7 @@ public class Goal {
     private DailyHabit dailyHabit;
     @NotNull(message = "{Goal.corrupted}")
     private boolean achieved;
+    private String inspiredBy;
+    @URL
+    private String inspiredByLink;
 }
