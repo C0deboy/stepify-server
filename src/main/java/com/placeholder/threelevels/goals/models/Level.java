@@ -29,4 +29,5 @@ public class Level {
     private LocalDate achievedAt;
     @URL
     private String achievedProof;
+    private String toBeDoneAt;
 }
