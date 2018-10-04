@@ -1,13 +1,17 @@
 package com.placeholder.threelevels.goals.models;
 
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.bson.types.ObjectId;
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
@@ -28,6 +32,7 @@ public class Goal {
         @Size(max = 100, message = "{Goal.name.max}")
     })
     private String name;
+    private double order;
     @Size(max = 5, message = "{Goal.levels.max}")
     private List< @Valid Level> levels;
     @Valid

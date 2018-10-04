@@ -32,7 +32,7 @@ public class Oauth2AuthServerConfig extends AuthorizationServerConfigurerAdapter
         clients.inMemory()
             .withClient("root").secret(ROOT)
             .authorizedGrantTypes("password", "authorization_code", "refresh_token")
-            .accessTokenValiditySeconds(3600)
+            .accessTokenValiditySeconds(3600*8)
             .refreshTokenValiditySeconds(28 * 24 * 3600)
             .scopes("read", "write");
     }

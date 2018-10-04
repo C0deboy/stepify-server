@@ -1,14 +1,16 @@
 package com.placeholder.threelevels.goals.models;
 
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.validation.constraints.AssertTrue;
-import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -19,9 +21,9 @@ import java.util.Date;
 public class DailyHabit {
 
     @NotNull(message = "{DailyHabit.corrupted}")
-    private LocalDate from;
+    private Date from;
     @NotNull(message = "{DailyHabit.corrupted}")
-    private LocalDate to;
+    private Date to;
     @Min(value = 1, message = "{DailyHabit.everyNDays.min}")
     @Max(value = 7, message = "{DailyHabit.everyNDays.max}")
     private Integer everyNDays;
@@ -53,7 +55,7 @@ public class DailyHabit {
         }
 
         for (int day : specificDays) {
-            valid = day > 0 && day <= 7;
+            valid = day >= 0 && day <= 7;
         }
 
         return valid;

@@ -1,13 +1,16 @@
 package com.placeholder.threelevels.goals.models;
 
-import lombok.*;
+import com.placeholder.threelevels.validation.DateFormat;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.validator.constraints.URL;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -26,8 +29,9 @@ public class Level {
     private String reward;
     @NotNull(message = "{Level.corrupted}")
     private boolean achieved;
-    private LocalDate achievedAt;
+    private Date achievedAt;
     @URL
     private String achievedProof;
+    @DateFormat(formats = {"uuuu", "M.uuuu", "d.M.uuuu"})
     private String toBeDoneAt;
 }

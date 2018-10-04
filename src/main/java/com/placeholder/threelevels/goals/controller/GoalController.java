@@ -5,11 +5,20 @@ import com.placeholder.threelevels.goals.repository.GoalRepository;
 import com.placeholder.threelevels.users.CustomUser;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @RestController
@@ -23,8 +32,14 @@ public class GoalController {
 
     @GetMapping("/goals")
     public List<Goal> getAllGoals(Authentication authentication) {
+
         CustomUser customUser = (CustomUser) authentication.getPrincipal();
-        return goalRepository.findByOwner(new ObjectId(customUser.getId()));
+        ObjectId userId = new ObjectId(customUser.getId());
+//        Sort sortByOrder = new Sort(Sort.DEFAULT_DIRECTION, "order");
+
+        List<Goal> goals = goalRepository.findByOwner(userId);
+        goals.sort(Comparator.comparing(Goal::getOrder));
+        return goals;
     }
 
     @PostMapping("/goals")
