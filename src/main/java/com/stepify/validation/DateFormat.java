@@ -1,4 +1,4 @@
-package com.placeholder.threelevels.validation;
+package com.stepify.validation;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

@@ -1,8 +1,8 @@
-package com.placeholder.threelevels.goals.controller;
+package com.stepify.goals.controller;
 
-import com.placeholder.threelevels.goals.models.Goal;
-import com.placeholder.threelevels.goals.repository.GoalRepository;
-import com.placeholder.threelevels.users.CustomUser;
+import com.stepify.goals.models.Goal;
+import com.stepify.goals.repository.GoalRepository;
+import com.stepify.users.CustomUser;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

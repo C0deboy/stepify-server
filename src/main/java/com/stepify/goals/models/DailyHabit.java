@@ -1,4 +1,4 @@
-package com.placeholder.threelevels.goals.models;
+package com.stepify.goals.models;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

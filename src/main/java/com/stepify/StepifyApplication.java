@@ -1,12 +1,12 @@
-package com.placeholder.threelevels;
+package com.stepify;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ThreeLevelsApplication {
+public class StepifyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ThreeLevelsApplication.class, args);
+        SpringApplication.run(StepifyApplication.class, args);
     }
 }

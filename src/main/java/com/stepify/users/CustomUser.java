@@ -1,4 +1,4 @@
-package com.placeholder.threelevels.users;
+package com.stepify.users;
 
 import lombok.Getter;
 import lombok.Setter;

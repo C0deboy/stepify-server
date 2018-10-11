@@ -1,6 +1,6 @@
-package com.placeholder.threelevels.security;
+package com.stepify.security;
 
-import com.placeholder.threelevels.users.MongoUserDetailsService;
+import com.stepify.users.MongoUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

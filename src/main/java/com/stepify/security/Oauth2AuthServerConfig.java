@@ -1,4 +1,4 @@
-package com.placeholder.threelevels.security;
+package com.stepify.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

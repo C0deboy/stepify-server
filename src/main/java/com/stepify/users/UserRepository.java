@@ -1,4 +1,4 @@
-package com.placeholder.threelevels.users;
+package com.stepify.users;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

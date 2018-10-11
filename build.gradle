@@ -16,12 +16,12 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 bootJar {
-    baseName = 'trzy-poziomy'
+    baseName = 'stepify'
     version =  '1.0.0'
 }
 
-group = 'com.placeholder'
-version = '0.0.1-SNAPSHOT'
+group = 'com.stepify'
+version = '1.0.0'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 

@@ -1,6 +1,6 @@
-package com.placeholder.threelevels.goals.models;
+package com.stepify.goals.models;
 
-import com.placeholder.threelevels.validation.DateFormat;
+import com.stepify.validation.DateFormat;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
