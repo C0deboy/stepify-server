@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
@@ -20,6 +21,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @RestController
+@RequestMapping("${spring.data.rest.basePath}")
 public class GoalController {
     private GoalRepository goalRepository;
 
@@ -33,7 +35,6 @@ public class GoalController {
 
         CustomUser customUser = (CustomUser) authentication.getPrincipal();
         ObjectId userId = new ObjectId(customUser.getId());
-//        Sort sortByOrder = new Sort(Sort.DEFAULT_DIRECTION, "order");
 
         List<Goal> goals = goalRepository.findByOwner(userId);
         goals.sort(Comparator.comparing(Goal::getOrder));
