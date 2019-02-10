@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 public class ListItem {
     @Size.List({
         @Size(min = 3, message = "{ListItem.value.min}"),
-        @Size(max = 100, message = "{ListItem.value.max}")
+        @Size(max = 150, message = "{ListItem.value.max}")
     })
     private String value;
     @NotNull(message = "{ListItem.corrupted}")

@@ -18,12 +18,12 @@ import java.util.List;
 public class Checklist {
     @Size.List({
         @Size(min = 3, message = "{Checklist.name.min}"),
-        @Size(max = 100, message = "{Checklist.name.max}")
+        @Size(max = 150, message = "{Checklist.name.max}")
     })
     private String name;
     @Size.List({
         @Size(min = 1, message = "{Checklist.list.min}"),
-        @Size(max = 15, message = "{Checklist.list.max}")
+        @Size(max = 100, message = "{Checklist.list.max}")
     })
     private List<@Valid ListItem> list;
 }
